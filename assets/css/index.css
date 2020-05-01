@@ -1,0 +1,5 @@
+img{
+    border: red 5px solid;
+    border-radius: 25px;
+    cursor: pointer;
+}
