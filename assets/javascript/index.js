@@ -1,16 +1,39 @@
-open = () => {
-    console.log( 'hello' )
-}
-open()
+$( 'document' ).ready( function () {
 
-pictureChoice = () => {
-    $( '.picture' ).on( "click", function () {
-        var points = Math.floor( ( Math.random() ) * 12 )
+    var points;
+    // total;
+
+
+    var points = Math.floor( ( Math.random() ) * 12 )
+
+    $( '#gomez' ).click( function () {
+        points;
         console.log( points )
-        total = points++
-        console.log( total )
-        console.log( 'You clicked a picture' )
+        console.log( 'You clicked Joe Gomez' )
     } )
-}
 
-pictureChoice()
+
+
+
+} )
+
+
+
+
+// open = () => {
+//     console.log( 'hello' )
+// }
+// open()
+
+
+
+
+
+
+
+
+
+
+
+
+
