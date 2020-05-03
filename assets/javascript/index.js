@@ -1,19 +1,38 @@
 var wins = 0;
 var losses = 0;
-
-currentScore = 0;
+var targetScore;
+var gomezPoints;
+var keitaPoints;
+var firminoPoints;
+var hendersonPoints;
+var manePoints;
+var currentScore;
 
 $( 'document' ).ready( function () {
 
+    $( '.wins' ).html( 'Wins: ' + wins );
+    $( '.losses' ).html( 'Losses: ' + losses );
 
-    var targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
-    console.log( targetScore )
 
-    var gomezPoints = Math.floor( ( Math.random() ) * 12 )
-    var keitaPoints = Math.floor( ( Math.random() ) * 12 )
-    var firminoPoints = Math.floor( ( Math.random() ) * 12 )
-    var hendersonPoints = Math.floor( ( Math.random() ) * 12 )
-    var manePoints = Math.floor( ( Math.random() ) * 12 )
+    targetScoreDisplay = () => {
+        targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
+        $( '.target-score' ).html( "Target score: " + targetScore )
+    }
+
+    init = () => {
+        currentScore = 0;
+        $( '.total' ).html( 'Total: ' + currentScore );
+        targetScoreDisplay();
+        console.log( targetScore )
+        gomezPoints = Math.floor( ( Math.random() ) * 12 )
+        keitaPoints = Math.floor( ( Math.random() ) * 12 )
+        firminoPoints = Math.floor( ( Math.random() ) * 12 )
+        hendersonPoints = Math.floor( ( Math.random() ) * 12 )
+        manePoints = Math.floor( ( Math.random() ) * 12 )
+    }
+    init()
+
+
 
     $( '#gomez' ).on( 'click', function () {
         gomezPoints;
@@ -21,6 +40,7 @@ $( 'document' ).ready( function () {
         console.log( 'You picked Joseph Gomez' )
         console.log( gomezPoints )
         console.log( currentScore )
+        scoring();
     } )
 
     $( '#keita' ).on( 'click', function () {
@@ -29,6 +49,7 @@ $( 'document' ).ready( function () {
         console.log( 'You picked Naby Keita' )
         console.log( keitaPoints )
         console.log( currentScore )
+        scoring();
     } )
 
     $( '#firmino' ).on( 'click', function () {
@@ -37,6 +58,7 @@ $( 'document' ).ready( function () {
         console.log( 'You picked Bobby' )
         console.log( firminoPoints )
         console.log( currentScore )
+        scoring();
     } )
 
     $( '#henderson' ).on( 'click', function () {
@@ -45,6 +67,7 @@ $( 'document' ).ready( function () {
         console.log( 'You picked Hendo' )
         console.log( hendersonPoints )
         console.log( currentScore )
+        scoring();
     } )
 
     $( '#mane' ).on( 'click', function () {
@@ -53,20 +76,27 @@ $( 'document' ).ready( function () {
         console.log( 'You picked Hendo' )
         console.log( manePoints )
         console.log( currentScore )
+        scoring();
     } )
 
-    update = () => {
+    // SCORE KEEPING FUNCTION
+
+    scoring = () => {
+        // Update score
         $( '.total' ).html( 'Total:' + currentScore )
-        console.log( currentScore )
+        if ( currentScore === targetScore ) {
+            wins++;
+            $( '.wins' ).html( 'Wins: ' + wins );
+            init();
+            alert( 'You win' )
+        }
+        else if ( currentScore > targetScore ) {
+            losses++;
+            $( '.losses' ).html( 'Losses: ' + losses );
+            init();
+            alert( 'You lose' )
+        }
     }
-
-
-
-
-    // hello = () => {
-    //     console.log( "hello" )
-    // }
-    // hello()
 
 } )
 
