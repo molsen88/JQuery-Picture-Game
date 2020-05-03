@@ -6,6 +6,7 @@ var keitaPoints;
 var firminoPoints;
 var hendersonPoints;
 var manePoints;
+var salahPoints;
 var currentScore;
 var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City"];
 var chosenTeam;
@@ -13,14 +14,14 @@ var opponent;
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
-    console.log( chosenTeam )
-    opponent = teams[chosenTeam]
-    console.log( opponent )
+    console.log( chosenTeam );
+    opponent = teams[chosenTeam];
+    console.log( opponent );
 }
 
 
 targetScoreDisplay = () => {
-    chosenTeamFunction()
+    chosenTeamFunction();
     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
     $( '.target-score' ).html( opponent + ': ' + targetScore )
 }
@@ -35,6 +36,7 @@ init = () => {
     firminoPoints = Math.floor( ( Math.random() ) * 12 )
     hendersonPoints = Math.floor( ( Math.random() ) * 12 )
     manePoints = Math.floor( ( Math.random() ) * 12 )
+    salahPoints = Math.floor( ( Math.random() ) * 12 )
 }
 
 $( 'document' ).ready( function () {
@@ -49,9 +51,6 @@ $( 'document' ).ready( function () {
         targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
         $( '.target-score' ).html( "Target score: " + targetScore )
     }
-
-
-
 
     $( '#gomez' ).on( 'click', function () {
         gomezPoints;
@@ -81,7 +80,7 @@ $( 'document' ).ready( function () {
     } )
 
     $( '#henderson' ).on( 'click', function () {
-        gomezPoints;
+        hendersonPoints;
         currentScore += hendersonPoints;
         console.log( 'You picked Hendo' )
         console.log( hendersonPoints )
@@ -90,10 +89,19 @@ $( 'document' ).ready( function () {
     } )
 
     $( '#mane' ).on( 'click', function () {
-        gomezPoints;
+        manePoints;
         currentScore += manePoints;
         console.log( 'You picked Hendo' )
         console.log( manePoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#salah' ).on( 'click', function () {
+        salahPoints;
+        currentScore += salahPoints;
+        console.log( 'You picked Mo' )
+        console.log( salahPoints )
         console.log( currentScore )
         scoring();
     } )
