@@ -1,29 +1,52 @@
+var wins = 0;
+var losses = 0;
+
+currentScore = 0;
+
 $( 'document' ).ready( function () {
 
-    var points;
-    // total;
 
+    var targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
+    console.log( targetScore )
+    var gomezPoints = Math.floor( ( Math.random() ) * 12 )
+    var keitaPoints = Math.floor( ( Math.random() ) * 12 )
+    var firminoPoints = Math.floor( ( Math.random() ) * 12 )
 
-    var points = Math.floor( ( Math.random() ) * 12 )
-
-    $( '#gomez' ).click( function () {
-        points;
-        console.log( points )
-        console.log( 'You clicked Joe Gomez' )
+    $( '#gomez' ).on( 'click', function () {
+        gomezPoints;
+        currentScore += gomezPoints;
+        console.log( 'You picked Joseph Gomez' )
+        console.log( gomezPoints )
+        console.log( currentScore )
     } )
 
+    $( '#keita' ).on( 'click', function () {
+        keitaPoints;
+        currentScore += keitaPoints;
+        console.log( 'You picked Naby Keita' )
+        console.log( keitaPoints )
+        console.log( currentScore )
+    } )
 
+    $( '#firmino' ).on( 'click', function () {
+        firminoPoints;
+        currentScore += firminoPoints;
+        console.log( 'You picked Bobby' )
+        console.log( firminoPoints )
+        console.log( currentScore )
+    } )
 
+    // hello = () => {
+    //     console.log( "hello" )
+    // }
+    // hello()
 
 } )
 
 
 
 
-// open = () => {
-//     console.log( 'hello' )
-// }
-// open()
+
 
 
 
