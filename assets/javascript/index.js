@@ -7,8 +7,39 @@ var firminoPoints;
 var hendersonPoints;
 var manePoints;
 var currentScore;
+var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City"];
+var chosenTeam;
+var opponent;
+
+chosenTeamFunction = () => {
+    chosenTeam = Math.floor( Math.random() * teams.length )
+    console.log( chosenTeam )
+    opponent = teams[chosenTeam]
+    console.log( opponent )
+}
+
+
+targetScoreDisplay = () => {
+    chosenTeamFunction()
+    targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
+    $( '.target-score' ).html( opponent + ': ' + targetScore )
+}
+
+init = () => {
+    currentScore = 0;
+    $( '.total' ).html( 'Liverpool: ' + currentScore );
+    targetScoreDisplay();
+    console.log( targetScore )
+    gomezPoints = Math.floor( ( Math.random() ) * 12 )
+    keitaPoints = Math.floor( ( Math.random() ) * 12 )
+    firminoPoints = Math.floor( ( Math.random() ) * 12 )
+    hendersonPoints = Math.floor( ( Math.random() ) * 12 )
+    manePoints = Math.floor( ( Math.random() ) * 12 )
+}
 
 $( 'document' ).ready( function () {
+    init()
+
 
     $( '.wins' ).html( 'Wins: ' + wins );
     $( '.losses' ).html( 'Losses: ' + losses );
@@ -19,18 +50,6 @@ $( 'document' ).ready( function () {
         $( '.target-score' ).html( "Target score: " + targetScore )
     }
 
-    init = () => {
-        currentScore = 0;
-        $( '.total' ).html( 'Total: ' + currentScore );
-        targetScoreDisplay();
-        console.log( targetScore )
-        gomezPoints = Math.floor( ( Math.random() ) * 12 )
-        keitaPoints = Math.floor( ( Math.random() ) * 12 )
-        firminoPoints = Math.floor( ( Math.random() ) * 12 )
-        hendersonPoints = Math.floor( ( Math.random() ) * 12 )
-        manePoints = Math.floor( ( Math.random() ) * 12 )
-    }
-    init()
 
 
 
@@ -83,18 +102,18 @@ $( 'document' ).ready( function () {
 
     scoring = () => {
         // Update score
-        $( '.total' ).html( 'Total:' + currentScore )
+        $( '.total' ).html( 'Liverpool:' + currentScore )
         if ( currentScore === targetScore ) {
             wins++;
             $( '.wins' ).html( 'Wins: ' + wins );
             init();
-            alert( 'You win' )
+            alert( 'Liverpool win' )
         }
         else if ( currentScore > targetScore ) {
             losses++;
             $( '.losses' ).html( 'Losses: ' + losses );
             init();
-            alert( 'You lose' )
+            alert( opponent + ' wins!' )
         }
     }
 
