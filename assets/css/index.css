@@ -4,5 +4,13 @@ img{
     cursor: pointer;
     height: 250px;
     width: 200px;
+    margin: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+img:hover{ 
+     /* height: 290px; */
+    /* width: 240px; */
+    transform: scale(1.2);
 }
 
