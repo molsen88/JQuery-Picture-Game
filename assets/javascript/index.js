@@ -17,19 +17,22 @@ chosenTeamFunction = () => {
     console.log( chosenTeam );
     opponent = teams[chosenTeam];
     console.log( opponent );
-}
-
-
-targetScoreDisplay = () => {
-    chosenTeamFunction();
     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
     $( '.target-score' ).html( opponent + ': ' + targetScore )
 }
 
+
+// targetScoreDisplay = () => {
+// chosenTeamFunction();
+//     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
+//     $( '.target-score' ).html( opponent + ': ' + targetScore )
+// }
+
 init = () => {
+    chosenTeamFunction();
     currentScore = 0;
     $( '.total' ).html( 'Liverpool: ' + currentScore );
-    targetScoreDisplay();
+    // targetScoreDisplay();
     console.log( targetScore )
     gomezPoints = Math.floor( ( Math.random() ) * 12 )
     keitaPoints = Math.floor( ( Math.random() ) * 12 )
@@ -47,10 +50,10 @@ $( 'document' ).ready( function () {
     $( '.losses' ).html( 'Losses: ' + losses );
 
 
-    targetScoreDisplay = () => {
-        targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
-        $( '.target-score' ).html( "Target score: " + targetScore )
-    }
+    // targetScoreDisplay = () => {
+    //     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
+    //     $( '.target-score' ).html( "Target score: " + targetScore )
+    // }
 
     $( '#gomez' ).on( 'click', function () {
         gomezPoints;
@@ -114,14 +117,14 @@ $( 'document' ).ready( function () {
         if ( currentScore === targetScore ) {
             wins++;
             $( '.wins' ).html( 'Wins: ' + wins );
-            init();
             alert( 'Liverpool win' )
+            init();
         }
         else if ( currentScore > targetScore ) {
             losses++;
             $( '.losses' ).html( 'Losses: ' + losses );
-            init();
             alert( opponent + ' wins!' )
+            init();
         }
     }
 
