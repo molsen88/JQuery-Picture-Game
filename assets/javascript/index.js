@@ -8,7 +8,7 @@ var hendersonPoints;
 var manePoints;
 var salahPoints;
 var currentScore;
-var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City"];
+var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton",];
 var chosenTeam;
 var opponent;
 
@@ -22,18 +22,11 @@ chosenTeamFunction = () => {
 }
 
 
-// targetScoreDisplay = () => {
-// chosenTeamFunction();
-//     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
-//     $( '.target-score' ).html( opponent + ': ' + targetScore )
-// }
-
 init = () => {
     chosenTeamFunction();
     currentScore = 0;
     $( '.total' ).html( 'Liverpool: ' + currentScore );
-    // targetScoreDisplay();
-    console.log( targetScore )
+    // console.log( targetScore )
     gomezPoints = Math.floor( ( Math.random() ) * 12 )
     keitaPoints = Math.floor( ( Math.random() ) * 12 )
     firminoPoints = Math.floor( ( Math.random() ) * 12 )
@@ -48,12 +41,6 @@ $( 'document' ).ready( function () {
 
     $( '.wins' ).html( 'Wins: ' + wins );
     $( '.losses' ).html( 'Losses: ' + losses );
-
-
-    // targetScoreDisplay = () => {
-    //     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
-    //     $( '.target-score' ).html( "Target score: " + targetScore )
-    // }
 
     $( '#gomez' ).on( 'click', function () {
         gomezPoints;
