@@ -1,3 +1,15 @@
+body{
+    background: url('../images/Anfield.jpg');
+    background-position: center;
+}
+
+h1{
+    font-size: 32px;
+    color: white;
+    font-family: 'Monoton', cursive;
+
+}
+
 img{
     border: red 5px solid;
     border-radius: 25px;

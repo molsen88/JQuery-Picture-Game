@@ -8,16 +8,25 @@ var hendersonPoints;
 var manePoints;
 var salahPoints;
 var currentScore;
-var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton",];
+var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton"];
 var chosenTeam;
 var opponent;
+
+// chosenTeamFunction = () => {
+//     chosenTeam = Math.floor( Math.random() * teams.length )
+//     console.log( chosenTeam );
+//     opponent = teams[chosenTeam];
+//     console.log( opponent );
+//     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
+//     $( '.target-score' ).html( '"<img src=" + teams.image + ">"' + opponent + ': ' + targetScore )
+// }
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
     console.log( chosenTeam );
     opponent = teams[chosenTeam];
     console.log( opponent );
-    targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
+    targetScore = Math.floor( ( Math.random() * 12 ) * 12 )
     $( '.target-score' ).html( opponent + ': ' + targetScore )
 }
 
@@ -46,7 +55,7 @@ $( 'document' ).ready( function () {
         gomezPoints;
         currentScore += gomezPoints;
         console.log( 'You picked Joseph Gomez' )
-        console.log( gomezPoints )
+        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -55,7 +64,7 @@ $( 'document' ).ready( function () {
         keitaPoints;
         currentScore += keitaPoints;
         console.log( 'You picked Naby Keita' )
-        console.log( keitaPoints )
+        // console.log( keitaPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -64,7 +73,7 @@ $( 'document' ).ready( function () {
         firminoPoints;
         currentScore += firminoPoints;
         console.log( 'You picked Bobby' )
-        console.log( firminoPoints )
+        // console.log( firminoPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -73,7 +82,7 @@ $( 'document' ).ready( function () {
         hendersonPoints;
         currentScore += hendersonPoints;
         console.log( 'You picked Hendo' )
-        console.log( hendersonPoints )
+        // console.log( hendersonPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -82,7 +91,7 @@ $( 'document' ).ready( function () {
         manePoints;
         currentScore += manePoints;
         console.log( 'You picked Hendo' )
-        console.log( manePoints )
+        // console.log( manePoints )
         console.log( currentScore )
         scoring();
     } )
@@ -91,7 +100,7 @@ $( 'document' ).ready( function () {
         salahPoints;
         currentScore += salahPoints;
         console.log( 'You picked Mo' )
-        console.log( salahPoints )
+        // console.log( salahPoints )
         console.log( currentScore )
         scoring();
     } )
