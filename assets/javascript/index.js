@@ -1,12 +1,6 @@
 var wins = 0;
 var losses = 0;
 var targetScore;
-var gomezPoints;
-var keitaPoints;
-var firminoPoints;
-var hendersonPoints;
-var manePoints;
-var salahPoints;
 var currentScore;
 var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton", "Norwich City",
     "West Ham", "Aston Villa", "Sheffield United", "Brighton", "Southampton", "Newcastle", "Wolverhampton", "Cyrstal Palace", "Watford",
@@ -52,13 +46,8 @@ init = () => {
 $( 'document' ).ready( function () {
     init()
 
-
     $( '.wins' ).html( 'Wins: ' + wins );
     $( '.losses' ).html( 'Losses: ' + losses );
-
-    // $( "img" ).on( 'click', function () {
-    //     console.log( 'You clicked on: ' + imgPoints )
-    // } )
 
     $( '#gomez' ).on( 'click', function () {
         gomezPoints;
@@ -140,6 +129,7 @@ $( 'document' ).ready( function () {
         console.log( currentScore )
         scoring();
     } )
+
     // SCORE KEEPING FUNCTION
 
     scoring = () => {
@@ -163,9 +153,7 @@ $( 'document' ).ready( function () {
             alert( opponent + ' wins!' )
             init();
         }
-
     }
-
 } )
 
 // THINGS TO IMPROVE
