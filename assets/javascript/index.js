@@ -145,11 +145,17 @@ $( 'document' ).ready( function () {
     scoring = () => {
         // Update score
         $( '.total' ).html( 'Liverpool: ' + currentScore )
+
         if ( currentScore === targetScore ) {
             wins++;
             $( '.wins' ).html( 'Wins: ' + wins );
             alert( 'Liverpool win' )
             init();
+        }
+        else if ( currentScore === 35 ) {
+            targetScore -= 10;
+            alert( opponent + " scored a penalty kick!" )
+            $( '.target-score' ).html( opponent + ': ' + targetScore )
         }
         else if ( currentScore > targetScore ) {
             losses++;
@@ -157,11 +163,7 @@ $( 'document' ).ready( function () {
             alert( opponent + ' wins!' )
             init();
         }
-        else if ( currentScore === 35 ) {
-            targetScore -= 10;
-            $( '.target-score' ).html( opponent + ': ' + targetScore )
 
-        }
     }
 
 } )
