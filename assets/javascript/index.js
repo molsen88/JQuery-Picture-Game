@@ -56,6 +56,10 @@ $( 'document' ).ready( function () {
     $( '.wins' ).html( 'Wins: ' + wins );
     $( '.losses' ).html( 'Losses: ' + losses );
 
+    // $( "img" ).on( 'click', function () {
+    //     console.log( 'You clicked on: ' + imgPoints )
+    // } )
+
     $( '#gomez' ).on( 'click', function () {
         gomezPoints;
         currentScore += gomezPoints;
@@ -152,6 +156,11 @@ $( 'document' ).ready( function () {
             $( '.losses' ).html( 'Losses: ' + losses );
             alert( opponent + ' wins!' )
             init();
+        }
+        else if ( currentScore === 35 ) {
+            targetScore -= 10;
+            $( '.target-score' ).html( opponent + ': ' + targetScore )
+
         }
     }
 

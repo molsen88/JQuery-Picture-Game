@@ -20,6 +20,7 @@ img{
     width: 175px;
     margin: 10px;
     transition: all 0.2s ease-in-out;
+   
 }
 
 .picture-row{
@@ -28,8 +29,6 @@ margin-top: 40px;
 }
 
 img:hover{ 
-     /* height: 290px; */
-    /* width: 240px; */
     transform: scale(1.2);
 }
 
