@@ -41,6 +41,11 @@ init = () => {
     vanDijkPoints = Math.floor( ( Math.random() ) * 12 )
     robertsonPoints = Math.floor( ( Math.random() ) * 12 )
     alissonPoints = Math.floor( ( Math.random() ) * 12 )
+    oxPoints = Math.floor( ( Math.random() ) * 12 )
+    fabinhoPoints = Math.floor( ( Math.random() ) * 12 )
+    giniPoints = Math.floor( ( Math.random() ) * 12 )
+    milnerPoints = Math.floor( ( Math.random() ) * 12 )
+    matipPoints = Math.floor( ( Math.random() ) * 12 )
 }
 
 $( 'document' ).ready( function () {
@@ -125,6 +130,51 @@ $( 'document' ).ready( function () {
         alissonPoints;
         currentScore += alissonPoints;
         console.log( 'You picked Robbo' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#ox' ).on( 'click', function () {
+        oxPoints;
+        currentScore += oxPoints;
+        console.log( 'You picked Ox' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#fabinho' ).on( 'click', function () {
+        fabinhoPoints;
+        currentScore += fabinhoPoints;
+        console.log( 'You picked Fabinho' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#gini' ).on( 'click', function () {
+        giniPoints;
+        currentScore += giniPoints;
+        console.log( 'You picked Gini' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#milner' ).on( 'click', function () {
+        milnerPoints;
+        currentScore += milnerPoints;
+        console.log( 'You picked Milly' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#matip' ).on( 'click', function () {
+        matipPoints;
+        currentScore += matipPoints;
+        console.log( 'You picked Milly' )
         // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
