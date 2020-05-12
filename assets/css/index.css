@@ -4,9 +4,11 @@ body{
 }
 
 h1{
-    font-size: 32px;
+    font-size: 50px;
     color: white;
-    font-family: 'Monoton', cursive;
+    font-family: 'Montserrat', sans-serif;
+    display: inline;
+    margin: 26px;
 
 }
 
@@ -14,10 +16,15 @@ img{
     border: red 5px solid;
     border-radius: 25px;
     cursor: pointer;
-    height: 250px;
-    width: 200px;
+    height: 230px;
+    width: 175px;
     margin: 10px;
     transition: all 0.2s ease-in-out;
+}
+
+.picture-row{
+margin-top: 40px;
+
 }
 
 img:hover{ 

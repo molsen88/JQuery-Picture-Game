@@ -8,7 +8,9 @@ var hendersonPoints;
 var manePoints;
 var salahPoints;
 var currentScore;
-var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton"];
+var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton", "Norwich City",
+    "West Ham", "Aston Villa", "Sheffield United", "Brighton", "Southampton", "Newcastle", "Wolverhampton", "Cyrstal Palace", "Watford",
+    "Bournemouth"];
 var chosenTeam;
 var opponent;
 
@@ -42,6 +44,9 @@ init = () => {
     hendersonPoints = Math.floor( ( Math.random() ) * 12 )
     manePoints = Math.floor( ( Math.random() ) * 12 )
     salahPoints = Math.floor( ( Math.random() ) * 12 )
+    vanDijkPoints = Math.floor( ( Math.random() ) * 12 )
+    robertsonPoints = Math.floor( ( Math.random() ) * 12 )
+    alissonPoints = Math.floor( ( Math.random() ) * 12 )
 }
 
 $( 'document' ).ready( function () {
@@ -105,11 +110,37 @@ $( 'document' ).ready( function () {
         scoring();
     } )
 
+    $( '#van-dijk' ).on( 'click', function () {
+        vanDijkPoints;
+        currentScore += vanDijkPoints;
+        console.log( 'You picked Big Virg' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#robertson' ).on( 'click', function () {
+        robertsonPoints;
+        currentScore += robertsonPoints;
+        console.log( 'You picked Robbo' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
+
+    $( '#alisson' ).on( 'click', function () {
+        alissonPoints;
+        currentScore += alissonPoints;
+        console.log( 'You picked Robbo' )
+        // console.log( gomezPoints )
+        console.log( currentScore )
+        scoring();
+    } )
     // SCORE KEEPING FUNCTION
 
     scoring = () => {
         // Update score
-        $( '.total' ).html( 'Liverpool:' + currentScore )
+        $( '.total' ).html( 'Liverpool: ' + currentScore )
         if ( currentScore === targetScore ) {
             wins++;
             $( '.wins' ).html( 'Wins: ' + wins );
@@ -125,6 +156,13 @@ $( 'document' ).ready( function () {
     }
 
 } )
+
+// THINGS TO IMPROVE
+
+// 1. ONE FUNCTION FOR POINTS
+// 2. GET OPPOSING TEAM CREST
+// 3. MAKE TIERS OF PLAYERS
+// 4. DESIGN/THEME
 
 
 
