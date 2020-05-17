@@ -215,11 +215,8 @@ $( 'document' ).ready( function () {
     }
     newOpponent();
 
-    // var modal = $( '#instructions-modal' );
 
-    // var instructionsBtn = $( '#instructions' );
-
-    // var span = $( '.close' )[0];
+    //INSTRUCTIONS MODAL
 
     $( '#instructions' ).on( 'click', function () {
         $( '#instructions-modal' ).css( 'display', 'block' )
