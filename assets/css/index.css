@@ -1,3 +1,8 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body{
     background: url('../images/Anfield.jpg');
     background-position: center;
@@ -9,8 +14,28 @@ h1{
     font-family: 'Montserrat', sans-serif;
     display: inline;
     margin: 26px;
-
 }
+
+h2{
+   font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    display: inline;
+    
+}
+
+p{
+    font-size: 16px;
+    color:gray;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.close{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: right;
+}
+
+
 
 img{
     border: red 5px solid;
@@ -32,3 +57,41 @@ img:hover{
     transform: scale(1.2);
 }
 
+.footer{
+    background-color: red;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background: rgb(0,0,0,0.4);
+}
+
+.modal-content{
+    background-color: white;
+    border-radius: 25px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid yellow;
+    width: 80%;
+}
+
+.close:hover,
+.close:focus{
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}

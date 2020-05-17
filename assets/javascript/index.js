@@ -32,20 +32,20 @@ init = () => {
     currentScore = 0;
     $( '.total' ).html( 'Liverpool: ' + currentScore );
     // console.log( targetScore )
-    gomezPoints = Math.floor( ( Math.random() ) * 12 )
-    keitaPoints = Math.floor( ( Math.random() ) * 12 )
-    firminoPoints = Math.floor( ( Math.random() ) * 12 )
-    hendersonPoints = Math.floor( ( Math.random() ) * 12 )
-    manePoints = Math.floor( ( Math.random() ) * 12 )
-    salahPoints = Math.floor( ( Math.random() ) * 12 )
-    vanDijkPoints = Math.floor( ( Math.random() ) * 12 )
-    robertsonPoints = Math.floor( ( Math.random() ) * 12 )
-    alissonPoints = Math.floor( ( Math.random() ) * 12 )
-    oxPoints = Math.floor( ( Math.random() ) * 12 )
-    fabinhoPoints = Math.floor( ( Math.random() ) * 12 )
-    giniPoints = Math.floor( ( Math.random() ) * 12 )
-    milnerPoints = Math.floor( ( Math.random() ) * 12 )
-    matipPoints = Math.floor( ( Math.random() ) * 12 )
+    gomezPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    keitaPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    firminoPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    hendersonPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    manePoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    salahPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    vanDijkPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    robertsonPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    alissonPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    oxPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    fabinhoPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    giniPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    milnerPoints = Math.floor( ( Math.random() * 1 ) * 12 )
+    matipPoints = Math.floor( ( Math.random() * 1 ) * 12 )
 }
 
 $( 'document' ).ready( function () {
@@ -93,7 +93,7 @@ $( 'document' ).ready( function () {
     $( '#mane' ).on( 'click', function () {
         manePoints;
         currentScore += manePoints;
-        console.log( 'You picked Hendo' )
+        console.log( 'You picked Mane' )
         // console.log( manePoints )
         console.log( currentScore )
         scoring();
@@ -129,7 +129,7 @@ $( 'document' ).ready( function () {
     $( '#alisson' ).on( 'click', function () {
         alissonPoints;
         currentScore += alissonPoints;
-        console.log( 'You picked Robbo' )
+        console.log( 'You picked Alisson' )
         // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
@@ -204,7 +204,43 @@ $( 'document' ).ready( function () {
             init();
         }
     }
+
+    // FUNCTION FOR A NEW OPPONENT
+
+    newOpponent = () => {
+        $( '#new-team' ).on( 'click', function () {
+            chosenTeamFunction();
+            console.log( 'you clicked a button' )
+        } )
+    }
+    newOpponent();
+
+    // var modal = $( '#instructions-modal' );
+
+    // var instructionsBtn = $( '#instructions' );
+
+    // var span = $( '.close' )[0];
+
+    $( '#instructions' ).on( 'click', function () {
+        $( '#instructions-modal' ).css( 'display', 'block' )
+    } )
+
+    $( '.close' ).on( 'click', function () {
+        $( '#instructions-modal' ).css( 'display', 'none' )
+
+    } )
+
+    // window.on( 'click', function ( e ) {
+    //     if ( e.target == modal ) {
+    //         modal.style.display = 'none'
+    //     }
+    // } )
+
+
+
 } )
+
+
 
 // THINGS TO IMPROVE
 
