@@ -224,7 +224,14 @@ $( 'document' ).ready( function () {
 
     $( '.close' ).on( 'click', function () {
         $( '#instructions-modal' ).css( 'display', 'none' )
+    } )
 
+    $( '#yellow-card' ).on( 'click', function () {
+        $( '#yellow-card-modal' ).css( 'display', 'block' )
+    } )
+
+    $( '.close' ).on( 'click', function () {
+        $( '#yellow-card-modal' ).css( 'display', 'none' )
     } )
 
     $( window ).click( function ( e ) {

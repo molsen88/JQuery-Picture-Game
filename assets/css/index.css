@@ -38,6 +38,7 @@ p{
     /* text-align: right; */
     margin-left: 1050px;
     margin-top: 20px;
+    color: red;
 }
 
 img{
@@ -80,7 +81,7 @@ button{
     margin-top: 8px;
     margin-left: 100px;
     cursor: pointer;
-    outline: 'none';
+    outline: "none" !important;
     border: 'none';
 }
 
@@ -117,7 +118,7 @@ button{
 
 .close:hover,
 .close:focus{
-    color: red;
+    color: yellow;
     text-decoration: none;
     cursor: pointer;
 }
