@@ -227,6 +227,12 @@ $( 'document' ).ready( function () {
 
     } )
 
+    $( window ).click( function ( e ) {
+        if ( e.target == modal ) {
+            $( '#instructions-modal' ).css( 'display', 'none' )
+        }
+
+    } )
     // window.on( 'click', function ( e ) {
     //     if ( e.target == modal ) {
     //         modal.style.display = 'none'
@@ -241,10 +247,13 @@ $( 'document' ).ready( function () {
 
 // THINGS TO IMPROVE
 
-// 1. ONE FUNCTION FOR POINTS
-// 2. GET OPPOSING TEAM CREST
-// 3. MAKE TIERS OF PLAYERS
-// 4. DESIGN/THEME
+// 1. WINDOW ONCLICK EXIT MODAL WORKING
+// 1A. MODAL TO CELEBRATE WIN AND LOSS
+// 2. RED/YELLOW CARD RANDOM POINTS LOSS/GAIN
+// 3. ONE FUNCTION FOR POINTS
+// 4. GET OPPOSING TEAM CREST
+// 5. MAKE TIERS OF PLAYERS
+// 6. DESIGN/THEME
 
 
 
