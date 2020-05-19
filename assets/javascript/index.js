@@ -226,6 +226,7 @@ $( 'document' ).ready( function () {
         $( '#instructions-modal' ).css( 'display', 'none' )
     } )
 
+    //YELLOW CARD MODAL
     $( '#yellow-card' ).on( 'click', function () {
         $( '#yellow-card-modal' ).css( 'display', 'block' )
     } )
@@ -234,17 +235,14 @@ $( 'document' ).ready( function () {
         $( '#yellow-card-modal' ).css( 'display', 'none' )
     } )
 
-    $( window ).click( function ( e ) {
-        if ( e.target == modal ) {
-            $( '#instructions-modal' ).css( 'display', 'none' )
-        }
-
-    } )
-    // window.on( 'click', function ( e ) {
-    //     if ( e.target == modal ) {
-    //         modal.style.display = 'none'
+    // $( document ).click( function ( e ) {
+    //     console.log( e )
+    //     if ( e.target === document ) {
+    //         $( '#instructions-modal' ).css( 'display', 'none' )
     //     }
+
     // } )
+
 
 
 
