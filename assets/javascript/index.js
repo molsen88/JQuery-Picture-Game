@@ -8,18 +8,10 @@ var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsen
 var chosenTeam;
 var opponent;
 
-// chosenTeamFunction = () => {
-//     chosenTeam = Math.floor( Math.random() * teams.length )
-//     console.log( chosenTeam );
-//     opponent = teams[chosenTeam];
-//     console.log( opponent );
-//     targetScore = Math.floor( ( Math.random() * 7 ) * 20 )
-//     $( '.target-score' ).html( '"<img src=" + teams.image + ">"' + opponent + ': ' + targetScore )
-// }
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
-    console.log( chosenTeam );
+    // console.log( chosenTeam );
     opponent = teams[chosenTeam];
     console.log( opponent );
     targetScore = Math.floor( ( Math.random() * 12 ) * 12 )
@@ -58,7 +50,6 @@ $( 'document' ).ready( function () {
         gomezPoints;
         currentScore += gomezPoints;
         console.log( 'You picked Joseph Gomez' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -67,7 +58,6 @@ $( 'document' ).ready( function () {
         keitaPoints;
         currentScore += keitaPoints;
         console.log( 'You picked Naby Keita' )
-        // console.log( keitaPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -76,7 +66,6 @@ $( 'document' ).ready( function () {
         firminoPoints;
         currentScore += firminoPoints;
         console.log( 'You picked Bobby' )
-        // console.log( firminoPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -85,7 +74,6 @@ $( 'document' ).ready( function () {
         hendersonPoints;
         currentScore += hendersonPoints;
         console.log( 'You picked Hendo' )
-        // console.log( hendersonPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -94,7 +82,6 @@ $( 'document' ).ready( function () {
         manePoints;
         currentScore += manePoints;
         console.log( 'You picked Mane' )
-        // console.log( manePoints )
         console.log( currentScore )
         scoring();
     } )
@@ -103,7 +90,6 @@ $( 'document' ).ready( function () {
         salahPoints;
         currentScore += salahPoints;
         console.log( 'You picked Mo' )
-        // console.log( salahPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -112,7 +98,6 @@ $( 'document' ).ready( function () {
         vanDijkPoints;
         currentScore += vanDijkPoints;
         console.log( 'You picked Big Virg' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -121,7 +106,6 @@ $( 'document' ).ready( function () {
         robertsonPoints;
         currentScore += robertsonPoints;
         console.log( 'You picked Robbo' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -130,7 +114,6 @@ $( 'document' ).ready( function () {
         alissonPoints;
         currentScore += alissonPoints;
         console.log( 'You picked Alisson' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -139,7 +122,6 @@ $( 'document' ).ready( function () {
         oxPoints;
         currentScore += oxPoints;
         console.log( 'You picked Ox' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -148,7 +130,6 @@ $( 'document' ).ready( function () {
         fabinhoPoints;
         currentScore += fabinhoPoints;
         console.log( 'You picked Fabinho' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -157,7 +138,6 @@ $( 'document' ).ready( function () {
         giniPoints;
         currentScore += giniPoints;
         console.log( 'You picked Gini' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -166,7 +146,6 @@ $( 'document' ).ready( function () {
         milnerPoints;
         currentScore += milnerPoints;
         console.log( 'You picked Milly' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -175,7 +154,6 @@ $( 'document' ).ready( function () {
         matipPoints;
         currentScore += matipPoints;
         console.log( 'You picked Milly' )
-        // console.log( gomezPoints )
         console.log( currentScore )
         scoring();
     } )
@@ -189,7 +167,7 @@ $( 'document' ).ready( function () {
         if ( currentScore === targetScore ) {
             wins++;
             $( '.wins' ).html( 'Wins: ' + wins );
-            alert( 'Liverpool win' )
+            $( '#win-modal' ).css( 'display', 'block' )
             init();
         }
         else if ( currentScore === 35 ) {
@@ -200,7 +178,8 @@ $( 'document' ).ready( function () {
         else if ( currentScore > targetScore ) {
             losses++;
             $( '.losses' ).html( 'Losses: ' + losses );
-            alert( opponent + ' wins!' )
+            // alert( opponent + ' wins!' )
+            $( '#lose-modal' ).css( 'display', 'block' )
             init();
         }
     }
@@ -216,6 +195,13 @@ $( 'document' ).ready( function () {
     newOpponent();
 
 
+    //WIN OR LOSE MODAL
+
+
+    $( '.close' ).on( 'click', function () {
+        $( '#win-modal' ).css( 'display', 'none' )
+    } )
+
     //INSTRUCTIONS MODAL
 
     $( '#instructions' ).on( 'click', function () {
@@ -228,20 +214,19 @@ $( 'document' ).ready( function () {
 
     //YELLOW CARD MODAL
     $( '#yellow-card' ).on( 'click', function () {
+        yellowCardPoints = ( Math.floor( Math.random() * 2 ) * 6 )
         $( '#yellow-card-modal' ).css( 'display', 'block' )
+        $( '.card-content' ).html( opponent + " recieved a yellow card and gained " + yellowCardPoints + " points" )
+        targetScore += yellowCardPoints;
+        console.log( targetScore )
+        $( '.target-score' ).html( opponent + ": " + targetScore )
     } )
 
     $( '.close' ).on( 'click', function () {
         $( '#yellow-card-modal' ).css( 'display', 'none' )
     } )
 
-    // $( document ).click( function ( e ) {
-    //     console.log( e )
-    //     if ( e.target === document ) {
-    //         $( '#instructions-modal' ).css( 'display', 'none' )
-    //     }
 
-    // } )
 
 
 

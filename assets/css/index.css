@@ -35,14 +35,13 @@ p{
 .close{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    /* text-align: right; */
     margin-left: 1050px;
     margin-top: 20px;
     color: red;
 }
 
 img{
-    border: red 4px solid;
+    border: tomato 3px solid;
     border-radius: 25px;
     cursor: pointer;
     height: 210px;
@@ -61,7 +60,6 @@ img:hover{
 }
 
 .footer{
-    /* background-color: red; */
     position: absolute;
     left: 0;
     bottom: 0;
@@ -83,6 +81,7 @@ button{
     cursor: pointer;
     outline: "none" !important;
     border: 'none';
+    text-decoration: none;
 }
 
 #yellow-card{
@@ -114,6 +113,46 @@ button{
     padding: 20px;
     border: 1px solid yellow;
     width: 80%;
+    color: black;
+}
+
+#yellow-card-title{
+    color: yellow;
+}
+
+.card-content{
+    color:black;
+    font-size: 28px;
+    margin-top: 100px;
+}
+
+/* #lose-modal{
+    color:blue;
+    font-size: 56px;
+
+} */
+
+#win-modal-background{
+    background-image: url("../images/liverpool\ win.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+   
+}
+#win-modal h2{
+    color: red;
+    font-size: 76px;
+    text-align: center;
+}
+
+#win-close{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    /* margin-left: 1050px; */
+    margin-top: 20px;
+    color: red;
+
 }
 
 .close:hover,
