@@ -214,7 +214,8 @@ $( 'document' ).ready( function () {
 
     //YELLOW CARD MODAL
     $( '#yellow-card' ).on( 'click', function () {
-        yellowCardPoints = ( Math.floor( Math.random() * 2 ) * 6 )
+        yellowCardPoints = Math.floor( ( Math.random() * 1 ) * 25 )
+        console.log( yellowCardPoints )
         $( '#yellow-card-modal' ).css( 'display', 'block' )
         $( '.card-content' ).html( opponent + " recieved a yellow card and gained " + yellowCardPoints + " points" )
         targetScore += yellowCardPoints;
