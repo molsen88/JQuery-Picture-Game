@@ -1,24 +1,22 @@
-var wins = 0;
-var losses = 0;
-var targetScore;
-var currentScore;
-var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton", "Norwich City",
+let wins = 0;
+let losses = 0;
+let targetScore;
+let currentScore;
+const teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsenal", "Leicester City", "Everton", "Norwich City",
     "West Ham", "Aston Villa", "Sheffield United", "Brighton", "Southampton", "Newcastle", "Wolverhampton", "Cyrstal Palace", "Watford",
     "Bournemouth"];
-var chosenTeam;
-var opponent;
-var liverpoolPlayers = []
-
+let chosenTeam;
+let opponent;
+let liverpoolPlayers = []
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
-    // console.log( chosenTeam );
+    console.log( chosenTeam );
     opponent = teams[chosenTeam];
     console.log( opponent );
     targetScore = Math.floor( ( Math.random() * 12 ) * 12 )
     $( '.target-score' ).html( opponent + ': ' + targetScore )
 }
-
 
 init = () => {
     chosenTeamFunction();
@@ -47,6 +45,8 @@ $( 'document' ).ready( function () {
     $( '.wins' ).html( 'Wins: ' + wins );
     $( '.losses' ).html( 'Losses: ' + losses );
 
+    //PLAYERS POINTS AND CARDS
+
     let gomez = $( '#gomez' ).on( 'click', function () {
         gomezPoints;
         currentScore += gomezPoints;
@@ -55,9 +55,6 @@ $( 'document' ).ready( function () {
         scoring();
     } )
     liverpoolPlayers.push( gomez )
-    // console.log( gomez )
-
-
 
     let keita = $( '#keita' ).on( 'click', function () {
         keitaPoints;
@@ -67,8 +64,6 @@ $( 'document' ).ready( function () {
         scoring();
     } )
     liverpoolPlayers.push( keita )
-
-
 
     let firmino = $( '#firmino' ).on( 'click', function () {
         firminoPoints;
@@ -203,7 +198,7 @@ $( 'document' ).ready( function () {
             init();
         }
     }
-    console.log( liverpoolPlayers )
+    // console.log( liverpoolPlayers )
 
     // FUNCTION FOR A NEW OPPONENT
 
@@ -215,16 +210,12 @@ $( 'document' ).ready( function () {
     }
     newOpponent();
 
-
     //WIN OR LOSE MODAL
-
-
     $( '.close' ).on( 'click', function () {
         $( '#win-modal' ).css( 'display', 'none' )
     } )
 
     //INSTRUCTIONS MODAL
-
     $( '#instructions' ).on( 'click', function () {
         $( '#instructions-modal' ).css( 'display', 'block' )
     } )
@@ -270,19 +261,9 @@ $( 'document' ).ready( function () {
         }
     } )
 
-
     $( '.close' ).on( 'click', function () {
         $( '#red-card-modal' ).css( 'display', 'none' )
     } )
-
-
-
-
-
-
-
-
-
 } )
 
 
