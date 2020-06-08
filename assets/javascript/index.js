@@ -227,6 +227,22 @@ $( 'document' ).ready( function () {
         $( '#yellow-card-modal' ).css( 'display', 'none' )
     } )
 
+    //RED CARD MODAL
+    $( '#red-card' ).on( 'click', function () {
+        redCardPoints = Math.floor( ( Math.random() * 10 ) * 10 )
+        $( '#red-card-modal' ).css( 'display', 'block' )
+        $( '.card-content' ).html( opponent + ": " + "received a red card and lost " + redCardPoints + " points!" )
+        targetScore -= redCardPoints;
+        $( '.target-score' ).html( opponent + ": " + targetScore )
+    } )
+
+    $( '.close' ).on( 'click', function () {
+        $( '#red-card-modal' ).css( 'display', 'none' )
+    } )
+
+
+
+
 
 
 
@@ -239,12 +255,13 @@ $( 'document' ).ready( function () {
 // THINGS TO IMPROVE
 
 // 1. WINDOW ONCLICK EXIT MODAL WORKING
-// 1A. MODAL TO CELEBRATE WIN AND LOSS
 // 2. RED/YELLOW CARD RANDOM POINTS LOSS/GAIN
+// 2A. CLICKS LEFT ???
 // 3. ONE FUNCTION FOR POINTS
 // 4. GET OPPOSING TEAM CREST
 // 5. MAKE TIERS OF PLAYERS
 // 6. DESIGN/THEME
+
 
 
 
