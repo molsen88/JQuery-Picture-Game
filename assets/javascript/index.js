@@ -256,10 +256,10 @@ $( 'document' ).ready( function () {
             $( '.card-content' ).html( opponent + ": " + "received a red card and lost " + redCardPoints + " points!" )
             targetScore -= redCardPoints;
             $( '.target-score' ).html( opponent + ": " + targetScore )
-            for ( i = 0; i < liverpoolPlayers.length; i++ ) {
-                liverpoolPlayers[i].off()
-            }
 
+            for ( i = 0; i < liverpoolPlayers.length; i++ ) {
+                liverpoolPlayers[i % 7].off()
+            }
         }
         else {
             redCardPoints = Math.floor( ( Math.random() * 2 ) * 15 )
