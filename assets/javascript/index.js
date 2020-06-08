@@ -7,6 +7,7 @@ var teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Arsen
     "Bournemouth"];
 var chosenTeam;
 var opponent;
+var liverpoolPlayers = []
 
 
 chosenTeamFunction = () => {
@@ -46,117 +47,136 @@ $( 'document' ).ready( function () {
     $( '.wins' ).html( 'Wins: ' + wins );
     $( '.losses' ).html( 'Losses: ' + losses );
 
-    $( '#gomez' ).on( 'click', function () {
+    let gomez = $( '#gomez' ).on( 'click', function () {
         gomezPoints;
         currentScore += gomezPoints;
         console.log( 'You picked Joseph Gomez' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( gomez )
+    // console.log( gomez )
 
-    $( '#keita' ).on( 'click', function () {
+
+
+    let keita = $( '#keita' ).on( 'click', function () {
         keitaPoints;
         currentScore += keitaPoints;
         console.log( 'You picked Naby Keita' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( keita )
 
-    $( '#firmino' ).on( 'click', function () {
+
+
+    let firmino = $( '#firmino' ).on( 'click', function () {
         firminoPoints;
         currentScore += firminoPoints;
         console.log( 'You picked Bobby' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( firmino )
 
-    $( '#henderson' ).on( 'click', function () {
+    let henderson = $( '#henderson' ).on( 'click', function () {
         hendersonPoints;
         currentScore += hendersonPoints;
         console.log( 'You picked Hendo' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( henderson )
 
-    $( '#mane' ).on( 'click', function () {
+    let mane = $( '#mane' ).on( 'click', function () {
         manePoints;
         currentScore += manePoints;
         console.log( 'You picked Mane' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( mane )
 
-    $( '#salah' ).on( 'click', function () {
+    let salah = $( '#salah' ).on( 'click', function () {
         salahPoints;
         currentScore += salahPoints;
         console.log( 'You picked Mo' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( salah )
 
-    $( '#van-dijk' ).on( 'click', function () {
+    let virgil = $( '#van-dijk' ).on( 'click', function () {
         vanDijkPoints;
         currentScore += vanDijkPoints;
         console.log( 'You picked Big Virg' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( virgil )
 
-    $( '#robertson' ).on( 'click', function () {
+    let robbo = $( '#robertson' ).on( 'click', function () {
         robertsonPoints;
         currentScore += robertsonPoints;
         console.log( 'You picked Robbo' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( robbo )
 
-    $( '#alisson' ).on( 'click', function () {
+    let alisson = $( '#alisson' ).on( 'click', function () {
         alissonPoints;
         currentScore += alissonPoints;
         console.log( 'You picked Alisson' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( alisson )
 
-    $( '#ox' ).on( 'click', function () {
+    let ox = $( '#ox' ).on( 'click', function () {
         oxPoints;
         currentScore += oxPoints;
         console.log( 'You picked Ox' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( ox )
 
-    $( '#fabinho' ).on( 'click', function () {
+    let fabinho = $( '#fabinho' ).on( 'click', function () {
         fabinhoPoints;
         currentScore += fabinhoPoints;
         console.log( 'You picked Fabinho' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( fabinho )
 
-    $( '#gini' ).on( 'click', function () {
+    let gini = $( '#gini' ).on( 'click', function () {
         giniPoints;
         currentScore += giniPoints;
         console.log( 'You picked Gini' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( gini )
 
-    $( '#milner' ).on( 'click', function () {
+    let milner = $( '#milner' ).on( 'click', function () {
         milnerPoints;
         currentScore += milnerPoints;
         console.log( 'You picked Milly' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( milner )
 
-    $( '#matip' ).on( 'click', function () {
+    let matip = $( '#matip' ).on( 'click', function () {
         matipPoints;
         currentScore += matipPoints;
         console.log( 'You picked Milly' )
         console.log( currentScore )
         scoring();
     } )
+    liverpoolPlayers.push( matip )
 
     // SCORE KEEPING FUNCTION
 
@@ -183,6 +203,7 @@ $( 'document' ).ready( function () {
             init();
         }
     }
+    console.log( liverpoolPlayers )
 
     // FUNCTION FOR A NEW OPPONENT
 
@@ -229,12 +250,26 @@ $( 'document' ).ready( function () {
 
     //RED CARD MODAL
     $( '#red-card' ).on( 'click', function () {
-        redCardPoints = Math.floor( ( Math.random() * 10 ) * 10 )
-        $( '#red-card-modal' ).css( 'display', 'block' )
-        $( '.card-content' ).html( opponent + ": " + "received a red card and lost " + redCardPoints + " points!" )
-        targetScore -= redCardPoints;
-        $( '.target-score' ).html( opponent + ": " + targetScore )
+        if ( targetScore >= 80 ) {
+            redCardPoints = Math.floor( ( Math.random() * 10 ) * 10 )
+            $( '#red-card-modal' ).css( 'display', 'block' )
+            $( '.card-content' ).html( opponent + ": " + "received a red card and lost " + redCardPoints + " points!" )
+            targetScore -= redCardPoints;
+            $( '.target-score' ).html( opponent + ": " + targetScore )
+            for ( i = 0; i < liverpoolPlayers.length; i++ ) {
+                liverpoolPlayers[i].off()
+            }
+
+        }
+        else {
+            redCardPoints = Math.floor( ( Math.random() * 2 ) * 15 )
+            $( '#red-card-modal' ).css( 'display', 'block' )
+            $( '.card-content' ).html( opponent + " received a red card and lost " + redCardPoints + " points!" )
+            targetScore -= redCardPoints;
+            $( '.target-score' ).html( opponent + ": " + targetScore )
+        }
     } )
+
 
     $( '.close' ).on( 'click', function () {
         $( '#red-card-modal' ).css( 'display', 'none' )
