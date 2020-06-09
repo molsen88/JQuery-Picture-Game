@@ -7,7 +7,11 @@ const teams = ["Chelsea", "Man City", "Burnley", "Tottenham", "Man United", "Ars
     "Bournemouth"];
 let chosenTeam;
 let opponent;
-let liverpoolPlayers = []
+let liverpoolPlayers = [];
+let matchDay;
+let oneRandomTeam;
+let punishedTeam;
+let clicks = 50;
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
@@ -206,6 +210,8 @@ $( 'document' ).ready( function () {
         $( '#new-team' ).on( 'click', function () {
             chosenTeamFunction();
             losses++;
+            currentScore = 0;
+            $( '.total' ).html( 'Liverpool: ' + currentScore );
             $( '.losses' ).html( 'Losses: ' + losses );
             console.log( 'you clicked a button' )
         } )
@@ -241,18 +247,18 @@ $( 'document' ).ready( function () {
         $( '#yellow-card-modal' ).css( 'display', 'none' )
     } )
 
+
+    matchDay = ["Liverpool", opponent]
+    // matchDay.push( opponent )
+    console.log( matchDay )
+    oneRandomTeam = Math.floor( Math.random() * matchDay.length )
+    console.log( oneRandomTeam )
+    punishedTeam = matchDay[oneRandomTeam]
+    console.log( punishedTeam )
+
     //RED CARD MODAL
     $( '#red-card' ).on( 'click', function () {
         if ( targetScore >= 80 ) {
-            matchDay = ["Liverpool", opponent]
-            // matchDay.push( opponent )
-            console.log( matchDay )
-            oneRandomTeam = Math.floor( Math.random() * matchDay.length )
-            console.log( oneRandomTeam )
-            punishedTeam = matchDay[oneRandomTeam]
-            console.log( punishedTeam )
-
-
             if ( punishedTeam === "Liverpool" ) {
                 redCardPoints = Math.floor( ( Math.random() * 10 ) * 10 )
                 $( '#red-card-modal' ).css( 'display', 'block' )
@@ -260,8 +266,29 @@ $( 'document' ).ready( function () {
                 targetScore -= redCardPoints;
                 $( '.target-score' ).html( opponent + ": " + targetScore )
 
+                playerOne = Math.floor( Math.random() * liverpoolPlayers.length );
+                console.log( playerOne )
+                playerTwo = Math.floor( Math.random() * liverpoolPlayers.length );
+                console.log( playerTwo )
+                playerThree = Math.floor( Math.random() * liverpoolPlayers.length );
+                console.log( playerThree )
+                playerFour = Math.floor( Math.random() * liverpoolPlayers.length );
+                console.log( playerFour )
+                playerFive = Math.floor( Math.random() * liverpoolPlayers.length );
+                console.log( playerFive )
+                playerSix = Math.floor( Math.random() * liverpoolPlayers.length );
+                console.log( playerSix )
+                playerSeven = Math.floor( Math.random() * liverpoolPlayers.length );
+                console.log( playerSeven )
+
                 for ( i = 0; i < liverpoolPlayers.length; i++ ) {
-                    liverpoolPlayers[i % 7].off()
+                    liverpoolPlayers[playerOne].off()
+                    liverpoolPlayers[playerTwo].off()
+                    liverpoolPlayers[playerThree].off()
+                    liverpoolPlayers[playerFour].off()
+                    liverpoolPlayers[playerFive].off()
+                    liverpoolPlayers[playerSix].off()
+                    liverpoolPlayers[playerSeven].off()
                 }
             }
             else if ( punishedTeam === opponent ) {
@@ -272,12 +299,22 @@ $( 'document' ).ready( function () {
                 $( '.target-score' ).html( opponent + ": " + targetScore )
             }
         }
-        else {
-            redCardPoints = Math.floor( ( Math.random() * 2 ) * 15 )
-            $( '#red-card-modal' ).css( 'display', 'block' )
-            $( '.card-content' ).html( "Liverpool received a red card and lost " + redCardPoints + " points!" )
-            targetScore -= redCardPoints;
-            $( '.target-score' ).html( opponent + ": " + targetScore )
+
+        else if ( targetScore < 80 ) {
+            if ( punishedTeam === "Liverpool" ) {
+                redCardPoints = Math.floor( ( Math.random() * 2 ) * 15 );
+                $( '#red-card-modal' ).css( 'display', 'block' )
+                $( '.card-content' ).html( "Liverpool received a red card and " + opponent + " lost " + redCardPoints + " points!" )
+                targetScore -= redCardPoints;
+                $( '.target-score' ).html( opponent + ": " + targetScore )
+            }
+            else if ( punishedTeam === opponent ) {
+                redCardPoints = Math.floor( ( Math.random() * 2 ) * 15 );
+                $( '#red-card-modal' ).css( 'display', 'block' )
+                $( '.card-content' ).html( opponent + " received a red card and " + opponent + " gained " + redCardPoints + " points!" )
+                targetScore += redCardPoints;
+                $( '.target-score' ).html( opponent + ": " + targetScore )
+            }
         }
     } )
 
