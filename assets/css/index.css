@@ -41,7 +41,7 @@ p{
 }
 
 img{
-    border: tomato 3px solid;
+    border: rgba(255, 0, 0, 0.884) 3px solid;
     border-radius: 25px;
     cursor: pointer;
     height: 210px;
