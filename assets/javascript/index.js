@@ -331,6 +331,7 @@ $( 'document' ).ready( function () {
                 $( '.target-score' ).html( opponent + ": " + targetScore )
             }
         }
+        $( '#red-card' ).off( 'click' )
     } )
 
     $( '.close' ).on( 'click', function () {
