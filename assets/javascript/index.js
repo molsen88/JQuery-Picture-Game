@@ -13,7 +13,6 @@ let oneRandomTeam;
 let punishedTeam;
 let clicks = 25;
 let redCard;
-// let turnOff = null;
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
@@ -235,6 +234,7 @@ $( 'document' ).ready( function () {
             console.log( 'you clicked a button' )
             clicks = 25;
             $( '.counter' ).html( 'Clicks: ' + clicks )
+            $( '#red-card' ).attr( 'disabled', false )
 
         } )
     }
@@ -358,7 +358,8 @@ $( 'document' ).ready( function () {
 // THINGS TO IMPROVE
 
 // 1. WINDOW ONCLICK EXIT MODAL WORKING
-// 2. RED/YELLOW CARD RANDOM POINTS LOSS/GAIN
+// 2. YELLOW CARD DISABLE AND RANDOMNESS
+// 2. RANDOM EVENTS RED CARD/YELLOW CARD
 // 3. ONE FUNCTION FOR POINTS
 // 4. GET OPPOSING TEAM CREST
 // 5. MAKE TIERS OF PLAYERS
