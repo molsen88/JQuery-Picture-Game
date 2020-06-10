@@ -12,6 +12,8 @@ let matchDay;
 let oneRandomTeam;
 let punishedTeam;
 let clicks = 25;
+let redCard;
+let turnOff = null;
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
@@ -26,6 +28,8 @@ init = () => {
     chosenTeamFunction();
     currentScore = 0;
     clicks = 25;
+    redCard;
+    $( '#red-card' ).attr( 'disabled', false )
     $( '.total' ).html( 'Liverpool: ' + currentScore );
     $( '.counter' ).html( 'Clicks: ' + clicks )
     // console.log( targetScore )
@@ -272,7 +276,7 @@ $( 'document' ).ready( function () {
     console.log( punishedTeam )
 
     //RED CARD MODAL
-    $( '#red-card' ).on( 'click', function () {
+    redCard = $( '#red-card' ).on( 'click', function () {
         if ( targetScore >= 80 ) {
             if ( punishedTeam === "Liverpool" ) {
                 redCardPoints = Math.floor( ( Math.random() * 10 ) * 10 )
@@ -329,9 +333,10 @@ $( 'document' ).ready( function () {
                 $( '.card-content' ).html( opponent + " received a red card and " + opponent + " gained " + redCardPoints + " points!" )
                 targetScore += redCardPoints;
                 $( '.target-score' ).html( opponent + ": " + targetScore )
+                $( '#red-card' ).off( 'click' )
             }
         }
-        $( '#red-card' ).off( 'click' )
+        $( '#red-card' ).attr( 'disabled', true )
     } )
 
     $( '.close' ).on( 'click', function () {
@@ -345,7 +350,6 @@ $( 'document' ).ready( function () {
 
 // 1. WINDOW ONCLICK EXIT MODAL WORKING
 // 2. RED/YELLOW CARD RANDOM POINTS LOSS/GAIN
-// 2A. CLICKS LEFT ???
 // 3. ONE FUNCTION FOR POINTS
 // 4. GET OPPOSING TEAM CREST
 // 5. MAKE TIERS OF PLAYERS
