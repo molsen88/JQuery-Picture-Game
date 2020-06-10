@@ -247,7 +247,7 @@ $( 'document' ).ready( function () {
         $( '#yellow-card-modal' ).css( 'display', 'none' )
     } )
 
-
+    //RANDOM CHOICE BETWEEN TEAMS FOR RED CARD
     matchDay = ["Liverpool", opponent]
     // matchDay.push( opponent )
     console.log( matchDay )

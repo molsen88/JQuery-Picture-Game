@@ -36,7 +36,7 @@ p{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     margin-left: 1050px;
-    margin-top: 20px;
+    margin-top: 50px;
     color: red;
 }
 
@@ -132,6 +132,9 @@ button{
     font-size: 56px;
 
 } */
+#win-modal{
+    height: 700px;
+}
 
 #win-modal-background{
     background-image: url("../images/liverpool\ win.jpeg");
@@ -142,18 +145,9 @@ button{
    
 }
 #win-modal h2{
-    color: red;
-    font-size: 76px;
+    color: white;
+    font-size: 105px;
     text-align: center;
-}
-
-#win-close{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    /* margin-left: 1050px; */
-    margin-top: 20px;
-    color: red;
-
 }
 
 .close:hover,
