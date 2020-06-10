@@ -156,3 +156,15 @@ button{
     text-decoration: none;
     cursor: pointer;
 }
+
+.clicks-box{
+    color: whitesmoke;
+    height: 55px;
+    width: 80px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: gray;
+    text-align: center;
+    
+}
