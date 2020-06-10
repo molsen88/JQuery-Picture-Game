@@ -64,8 +64,6 @@ $( 'document' ).ready( function () {
     $( '.wins' ).html( 'Wins: ' + wins );
     $( '.losses' ).html( 'Losses: ' + losses );
 
-
-
     //PLAYERS POINTS AND CARDS
 
     let gomez = $( '#gomez' ).on( 'click', function () {
