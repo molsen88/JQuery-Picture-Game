@@ -313,9 +313,15 @@ $( 'document' ).ready( function () {
             else if ( punishedTeam === opponent ) {
                 redCardPoints = Math.floor( ( Math.random() * 10 ) * 10 )
                 $( '#red-card-modal' ).css( 'display', 'block' )
-                $( '.card-content' ).html( opponent + " received a red card and gained " + redCardPoints + " points!" )
+                // $( '.card-content' ).html( opponent + " received a red card and gained " + redCardPoints + " points!" )
                 targetScore += redCardPoints;
                 $( '.target-score' ).html( opponent + ": " + targetScore )
+                rewardClicks = Math.floor( ( Math.random() * 2 ) * 6 )
+                clicks += rewardClicks;
+                $( '.card-content' ).html( opponent + " received a red card and gained " + redCardPoints + " points!" + " You also received " + rewardClicks + " more clicks!" )
+                $( '.counter' ).html( 'Clicks: ' + clicks )
+                console.log( clicks )
+
             }
         }
 
