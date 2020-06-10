@@ -233,6 +233,9 @@ $( 'document' ).ready( function () {
             $( '.total' ).html( 'Liverpool: ' + currentScore );
             $( '.losses' ).html( 'Losses: ' + losses );
             console.log( 'you clicked a button' )
+            clicks = 25;
+            $( '.counter' ).html( 'Clicks: ' + clicks )
+
         } )
     }
     newOpponent();
