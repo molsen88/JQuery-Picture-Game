@@ -71,7 +71,6 @@ $( 'document' ).ready( function () {
         currentScore += gomezPoints;
         console.log( 'You picked Joseph Gomez' )
         console.log( currentScore )
-        // scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( gomez )
@@ -81,7 +80,6 @@ $( 'document' ).ready( function () {
         currentScore += keitaPoints;
         console.log( 'You picked Naby Keita' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( keita )
@@ -91,7 +89,6 @@ $( 'document' ).ready( function () {
         currentScore += firminoPoints;
         console.log( 'You picked Bobby' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( firmino )
@@ -101,7 +98,6 @@ $( 'document' ).ready( function () {
         currentScore += hendersonPoints;
         console.log( 'You picked Hendo' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( henderson )
@@ -111,7 +107,6 @@ $( 'document' ).ready( function () {
         currentScore += manePoints;
         console.log( 'You picked Mane' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( mane )
@@ -121,7 +116,6 @@ $( 'document' ).ready( function () {
         currentScore += salahPoints;
         console.log( 'You picked Mo' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( salah )
@@ -131,7 +125,6 @@ $( 'document' ).ready( function () {
         currentScore += vanDijkPoints;
         console.log( 'You picked Big Virg' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( virgil )
@@ -141,7 +134,6 @@ $( 'document' ).ready( function () {
         currentScore += robertsonPoints;
         console.log( 'You picked Robbo' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( robbo )
@@ -151,7 +143,6 @@ $( 'document' ).ready( function () {
         currentScore += alissonPoints;
         console.log( 'You picked Alisson' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( alisson )
@@ -161,7 +152,6 @@ $( 'document' ).ready( function () {
         currentScore += oxPoints;
         console.log( 'You picked Ox' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( ox )
@@ -171,7 +161,6 @@ $( 'document' ).ready( function () {
         currentScore += fabinhoPoints;
         console.log( 'You picked Fabinho' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( fabinho )
@@ -181,7 +170,6 @@ $( 'document' ).ready( function () {
         currentScore += giniPoints;
         console.log( 'You picked Gini' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( gini )
@@ -191,7 +179,6 @@ $( 'document' ).ready( function () {
         currentScore += milnerPoints;
         console.log( 'You picked Milly' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( milner )
@@ -201,7 +188,6 @@ $( 'document' ).ready( function () {
         currentScore += matipPoints;
         console.log( 'You picked Milly' )
         console.log( currentScore )
-        scoring();
         clicksFunction()
     } )
     liverpoolPlayers.push( matip )
