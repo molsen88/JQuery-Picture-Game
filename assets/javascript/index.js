@@ -13,7 +13,7 @@ let oneRandomTeam;
 let punishedTeam;
 let clicks = 25;
 let redCard;
-let turnOff = null;
+// let turnOff = null;
 
 chosenTeamFunction = () => {
     chosenTeam = Math.floor( Math.random() * teams.length )
