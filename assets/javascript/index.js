@@ -76,6 +76,7 @@ $( 'document' ).ready( function () {
         console.log( currentScore )
         clicksFunction()
     } )
+    
     liverpoolPlayers.push( gomez )
 
     let keita = $( '#keita' ).on( 'click', function () {
